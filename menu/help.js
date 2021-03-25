@@ -344,61 +344,58 @@ exports.listsurah = listsurah
 
 // bahasa list
 const bahasa = (prefix) => {
-return `
-List Bahasa Untuk Command *${prefix}tts*
+return `👑⃝ꪶ𝜧𝜩𝜨𝜯𝜩໑ᤢ›𝜧𝜤𝑳𝜤𝜪𝜨𝜟̷𝑹𝜤𝜟̷🔥•.̇¹⁷⁵
+⊰━━━━━━━━━━☆𖧹. ․๋👑᭄🔥 ․๋𖧹☆━━━━━━━━━━⊱
+〔 # 〕𝐏𝐑𝐄𝐅𝐈𝐗𝐎 𝐃𝐎𝐒 𝐂𝐎𝐌𝐀𝐍𝐃𝐎𝐒〔 # 〕
+⊰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⊱
 
-  af: Afrikaans
-  sq: Albanian
-  ar: Arabic
-  hy: Armenian
-  ca: Catalan
-  zh: Chinese
-  zh-cn: Chinese (Mandarin/China)
-  zh-tw: Chinese (Mandarin/Taiwan)
-  zh-yue: Chinese (Cantonese)
-  hr: Croatian
-  cs: Czech
-  da: Danish
-  nl: Dutch
-  en: English
-  en-au: English (Australia)
-  en-uk: English (United Kingdom)
-  en-us: English (United States)
-  eo: Esperanto
-  fi: Finnish
-  fr: French
-  de: German
-  el: Greek
-  ht: Haitian Creole
-  hi: Hindi
-  hu: Hungarian
-  is: Icelandic
-  id: Indonesian
-  it: Italian
-  ja: Japanese
-  ko: Korean
-  la: Latin
-  lv: Latvian
-  mk: Macedonian
-  no: Norwegian
-  pl: Polish
-  pt: Portuguese
-  pt-br: Portuguese (Brazil)
-  ro: Romanian
-  ru: Russian
-  sr: Serbian
-  sk: Slovak
-  es: Spanish
-  es-es: Spanish (Spain)
-  es-us: Spanish (United States)
-  sw: Swahili
-  sv: Swedish
-  ta: Tamil
-  th: Thai
-  tr: Turkish
-  vi: Vietnamese
-  cy: Welsh
-`
+🔥ꪶ𝐂𝐎𝐌𝐀𝐍𝐃𝐎 𝐏𝐔𝐁𝐋𝐈𝐂𝐎 𝟏ᐧ𝟕ᐧ𝟓🔥
+
+👑᭄ꦿ⃔» #figurinha:
+Comando para fazer figurinhas de imagem e GIF.
+
+👑᭄ꦿ⃔» #img
+Comando que envia a imagem da figurinha.
+
+👑᭄ꦿ⃔» #perfil:
+Comando para ver o perfil do membro.
+
+👑᭄ꦿ⃔» #Link:
+Comando para o bot enviar o link atualizado do grupo.
+
+👑᭄ꦿ⃔» #nivelgay:
+Medir o nível de baitolagem do membro.
+
+👑᭄ꦿ⃔» #som:
+Comando para o bot mandar um áudio com o texto informado. Digite o a sigla da língua, exemplo:
+#som pt oi
+
+👑᭄ꦿ⃔» #listadeadm
+Mostra todos os administradores.
+
+👑᭄ꦿ⃔» #wait 
+Comando que envia o nome do anime pela foto
+⊰━━━━━━━━━━ •🔥💸• ━━━━━━━━━━⊱
+🔥ꪶ𝐂𝐎𝐌𝐀𝐍𝐃𝐎 𝐃𝐎𝐒 𝐀𝐃𝐌 𝟏ᐧ𝟕ᐧ𝟓🔥
+
+👑᭄ꦿ⃔» #antilink on/off:
+Comando de antilink.
+
+👑᭄ꦿ⃔» #bv:
+Comando de boas vindas.
+
+👑᭄ꦿ⃔» #rebaixar:
+Comando para rebaixar um administrador.
+
+👑᭄ꦿ⃔» #promover:
+Comando para promover um membro a administrador.
+
+👑᭄ꦿ⃔» #add (número):
+Comando para adicionar um membro.
+
+👑᭄ꦿ⃔» #b (numero):
+Comando para banir um membro.
+⊰━━━━━━━━━━ •🔥💸• ━━━━━━━━━━⊱`
 }
 exports.bahasa = bahasa
 
