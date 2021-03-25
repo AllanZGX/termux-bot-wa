@@ -700,8 +700,8 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					daftarimg = await getBuffer(ppimg)
 					frhan.sendMessage(from, daftarimg, image, {quoted: mek, caption: captionnya})
 					break
-			// case 'menu':
-			// case 'help':
+			// case 'menuu':
+			// case 'helpp':
 			// if (isBanned) return reply(mess.only.benned)
 			// 	//if (!isUser) return reply(mess.only.userB)
 			// 	uptime = process.uptime()
@@ -769,15 +769,15 @@ return new Promise(resolve => setTimeout(resolve, ms));
 // 				await costum(bottt(prefix), text, FarhanGans, botinfo)
 // 					break
 
-// 				case 'bahasa':
-// 				if (isBanned) return reply(mess.only.benned)    
-// 				if (!isUser) return reply(mess.only.userB)
-// 				frhan.sendMessage(from, bahasa(prefix), text, {quoted: mek})
-// 				break 
+				case 'menu':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				frhan.sendMessage(from, bahasa(prefix), text, {quoted: mek})
+				break 
 // 				case 'donasi':
 // 					frhan.sendMessage(from, donasi(name), text, {quoted: mek})
 // 					break
-// 				case 'info':
+// // 				case 'info':
 // 					me = frhan.user
 // 					user.push(sender)
 // 					uptime = process.uptime()
