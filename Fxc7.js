@@ -684,9 +684,9 @@ return new Promise(resolve => setTimeout(resolve, ms));
 		// 			await limitAdd(sender)
 		// 		break 
 		case 'daftarrr':
-		case 'verifyyy':
+		case 'perfil':
 					frhan.updatePresence(from, Presence.composing)
-					if (isUser) return reply('kamu sudah Menjadi Temen IRIENEBOT:D')
+					if (isUser) return reply('Vocês já são amigos')
 					if (isBanned) return reply(mess.only.benned)
 					user.push(sender)
 					fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
@@ -696,12 +696,12 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					ppimg = 'https://i.ibb.co/Gp4H47k/7dba54f7e250.jpg'
 					}
 					const noSeri = createSerial(15)
-					captionnya = `╭─「 *PENDAFTARAN USER* 」\n│ \`\`\`Pendaftaran berhasil dengan\`\`\` \n│ \`\`\`SN: ${noSeri}\`\`\`\n│\n│\`\`\`Pada ${date} ${time}\`\`\`\n│\`\`\`[Nama]: ${pushname2}\`\`\`\n│\`\`\`[Nomor]: wa.me/${sender.split("@")[0]}\`\`\`\n│\`\`\`Untuk menggunakan bot\`\`\`\n│\`\`\`silahkan\`\`\`\n│\`\`\`kirim ${prefix}help/menu\`\`\`\n│\`\`\`\n│Total Pengguna: ${user.length} Orang\`\`\`\n╰─────────────────────────`
+					captionnya = `╭─「 【👑𝐏𝐄𝐑𝐅𝐈𝐋 𝐃𝐎 𝐌𝐄𝐌𝚩𝐑𝐎💸】 」\n│ \`\`\`O registro foi feito com sucesso com\`\`\` \n│ \`\`\`SN: ${noSeri}\`\`\`\n│\n│\`\`\`𝐒𝐎𝐁𝐑𝐄 ${date} ${time}\`\`\`\n│\`\`\`[𝐍𝐎𝐌𝐄]: ${pushname2}╰─────────────────────────`
 					daftarimg = await getBuffer(ppimg)
 					frhan.sendMessage(from, daftarimg, image, {quoted: mek, caption: captionnya})
 					break
-			// case 'menuu':
-			// case 'helpp':
+			// case 'menu':
+			// case 'help':
 			// if (isBanned) return reply(mess.only.benned)
 			// 	//if (!isUser) return reply(mess.only.userB)
 			// 	uptime = process.uptime()
@@ -884,8 +884,8 @@ return new Promise(resolve => setTimeout(resolve, ms));
 				// 	}
 				// 	await limitAdd(sender) 
 				// 	break 
-				case 'stiker':
-				case 'sticker':
+				case 'fig':
+				case 'figurinha':
 						if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await frhan.downloadAndSaveMediaMessage(encmedia)
@@ -904,7 +904,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
-									await costum(fs.readFileSync(ran), sticker, FarhanGans, ` ~ Nihh Udah Jadi Stikernya`)
+									await costum(fs.readFileSync(ran), sticker, FarhanGans, ` ~ Já é uma figurinha, doente`)
 									fs.unlinkSync(media)	
 									fs.unlinkSync(ran)	
 								})
@@ -926,13 +926,13 @@ return new Promise(resolve => setTimeout(resolve, ms));
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ Gagal, pada saat mengkonversi ${tipe} ke stiker`)
+								reply(`deu certo não po ${tipe}`)
 							})
 							.on('end', function () {
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
-									await costum(fs.readFileSync(ran), sticker, FarhanGans, `~ Nih Dah Jadi Gif Stikernya`)
+									await costum(fs.readFileSync(ran), sticker, FarhanGans, `~ Toma ai teu gif`)
 									fs.unlinkSync(media)
 									fs.unlinkSync(ran)
 								})
@@ -951,7 +951,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 							fs.unlinkSync(media)
 							let buffer = Buffer.from(res.base64img, 'base64')
 							fs.writeFileSync(ranp, buffer, (err) => {
-								if (err) return reply('Gagal, Terjadi kesalahan, silahkan coba beberapa saat lagi.')
+								if (err) return reply('deu certo não mano.')
 							})
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
@@ -964,7 +964,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 							})
 						})
 					} else {
-						reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
+						reply(`marca a figurinha com ${prefix}sticker animal `)
 					}
 					break 
 			// 		case 'trigger':
@@ -1330,7 +1330,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 			// 		})
 			// 		await limitAdd(sender) 
 			// 		break 
-				case 'linkdogrupo':
+				case 'link':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				
@@ -1361,15 +1361,15 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					}
 					frhan.sendMessage(from, options, text)
 					break
-				// case 'nivelgay':
-				// if (isBanned) return reply(mess.only.benned)    
-				// if (!isUser) return reply(mess.only.userB)
+				 case 'nivelgay':
+				 if (isBanned) return reply(mess.only.benned)    
+				 if (!isUser) return reply(mess.only.userB)
 				
-				// 	ganteng = body.slice(12)
-				// 	const gan =['10%','30%','20%','40%','50%','60%','70%','62%','74%','83%','97%','100%','29%','94%','75%','82%','41%','39%']
-				// 	const teng = gan[Math.floor(Math.random() * gan.length)]
-				// 	frhan.sendMessage(from, 'Pertanyaan : Cek Ganteng Bang *'+ganteng+'*\n\nJawaban : '+ teng +'', text, { quoted: mek })
-				// 	break
+				 	ganteng = body.slice(12)
+				 	const gan =['10%','30%','20%','40%','50%','60%','70%','62%','74%','83%','97%','100%','29%','94%','75%','82%','41%','39%']
+				 	const teng = gan[Math.floor(Math.random() * gan.length)]
+				 	frhan.sendMessage(from, 'Pertanyaan : Cek Ganteng Bang *'+ganteng+'*\n\nJawaban : '+ teng +'', text, { quoted: mek })
+				 	break
 			// 	case 'cantikcek':
 			// 	case 'cekcantik':
 			// 	if (isBanned) return reply(mess.only.benned)    
@@ -1394,16 +1394,16 @@ return new Promise(resolve => setTimeout(resolve, ms));
 			// 	if (!isOwner) return reply(mess.only.ownerB)
 			// 	anu = await frhan.groupLeave(from, `Bye All Member *${groupMetadata.subject}*`, groupId)
 			// 	break
-			// 	case 'setname':
-			// 	if (isBanned) return reply(mess.only.benned)    
-			// 	if (!isUser) return reply(mess.only.userB)
+			 	case 'nomedogrupo':
+			 	if (isBanned) return reply(mess.only.benned)    
+			 	if (!isUser) return reply(mess.only.userB)
 				
-			// 	if (!isGroup) return reply(mess.only.group)
-			// 	if (!isGroupAdmins) return reply(mess.only.admin)
-			// 	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-			// 	frhan.groupUpdateSubject(from, `${body.slice(9)}`)
-			// 	frhan.sendMessage(from, `\`\`\`✓Sukses Mengganti Nama Group Menjadi\`\`\` *${body.slice(9)}*`, text, {quoted: mek})
-			// break
+			 	if (!isGroup) return reply(mess.only.group)
+			 	if (!isGroupAdmins) return reply(mess.only.admin)
+			 	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+			 	frhan.groupUpdateSubject(from, `${body.slice(9)}`)
+			 	frhan.sendMessage(from, `\`\`\`✓alterando o nome do grupo para\`\`\` *${body.slice(9)}*`, text, {quoted: mek})
+			 break
 			// case 'setdesc':
 			// 	if (isBanned) return reply(mess.only.benned)    
 			// 	if (!isUser) return reply(mess.only.userB)
@@ -1430,7 +1430,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 				exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 				fs.unlinkSync(ranm)
 				buff = fs.readFileSync(rano)
-				if (err) return reply('Gagal gan:(')
+				if (err) return reply('falhou mlk:(')
 				//reply(mess.wait)
 				frhan.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
 				fs.unlinkSync(rano)
@@ -3144,7 +3144,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 				// 	}
 				// 	mentions(`╔═══✪ Tag By *${pushname2}* ✪══`+ teks +'╚═══〘 FXC7 BOT 〙═══', members_id, true)
 				// 	break
-			    case 'convocar':
+			    case 'convocar2':
 			    if (isBanned) return reply(mess.only.benned)    
 			    //if (!isUser) return reply(mess.only.userB)
 			    
@@ -3264,7 +3264,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 						reply('Falha ao adicionar.')
 					}
 					break
-			    case 'kick':
+			    case 'b':
 				case 'ban':
 			    if (isBanned) return reply(mess.only.benned)    
 			    //if (!isUser) return reply(mess.only.userB)
@@ -3314,7 +3314,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 				// 	reply('Perintah Diterima min:D')
 				// 	}, 0)
 				// 	break
-				case 'promote':
+				case 'promover':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				
@@ -3341,7 +3341,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					frhan.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
-			    case 'demote':
+			    case 'rebaixar':
 			    if (isBanned) return reply(mess.only.benned)    
 			    //if (!isUser) return reply(mess.only.userB)
 			    
@@ -3362,7 +3362,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 						frhan.groupDemoteAdmin(from, mentioned)
 					}
 					break
-				case 'adminlist':
+				case 'listadeadm':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				
@@ -3375,7 +3375,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					}
 					mentions(teks, groupAdmins, true)
 					break
-				case 'toimg':
+				case 'img':
 				if (isLimit(sender)) return reply(limitend(pushname2))
 					if (!isQuotedSticker) return reply(' reply stickernya gan')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -3475,27 +3475,27 @@ return new Promise(resolve => setTimeout(resolve, ms));
 				// 		reply('On untuk mengaktifkan, Off untuk menonaktifkan')
 				// 	}
 				// 	break
-				// case 'welcome':
-				// if (isBanned) return reply(mess.only.benned)    
-				// if (!isUser) return reply(mess.only.userB)
+				 case 'bv':
+				 if (isBanned) return reply(mess.only.benned)    
+				 if (!isUser) return reply(mess.only.userB)
 				
-				// 	if (!isGroup) return reply(mess.only.group)
-				// 	if (!isGroupAdmins) return reply(mess.only.admin)
-				// 	if (args.length < 1) return reply('Hmmmm')
-				// 	if ((args[0]) === 'on') {
-				// 		if (isWelkom) return reply('Udah aktif gan')
-				// 		_welkom.push(from)
-				// 		fs.writeFileSync('./database/json/welkom.json', JSON.stringify(_welkom))
-				// 		reply(`\`\`\`✓Sukses mengaktifkan fitur welcome di group\`\`\` *${groupMetadata.subject}*`)
-				// 	} else if ((args[0]) === 'off') {
-				// 		if (!isWelkom) return reply('Mode Welcome Sudah Off Sebelumnya')
-				// 		_welkom.splice(from, 1)
-				// 		fs.writeFileSync('./database/json/welkom.json', JSON.stringify(_welkom))
-				// 		reply(`\`\`\`✓Sukses menonaktifkan fitur welcome di group\`\`\` *${groupMetadata.subject}*`)
-				// 	} else {
-				// 		reply('On untuk mengaktifkan, Off untuk menonaktifkan')
-				// 	}
-				// 	break 
+				 	if (!isGroup) return reply(mess.only.group)
+				 	if (!isGroupAdmins) return reply(mess.only.admin)
+				 	if (args.length < 1) return reply('Hmmmm')
+				 	if ((args[0]) === 'on') {
+				 		if (isWelkom) return reply('ta ativado doente')
+				 		_welkom.push(from)
+				 		fs.writeFileSync('./database/json/welkom.json', JSON.stringify(_welkom))
+				 		reply(`\`\`\`✓ ai sim em ademir, ativou o bagulho\`\`\` *${groupMetadata.subject}*`)
+				 	} else if ((args[0]) === 'off') {
+				 		if (!isWelkom) return reply('mlk tu ja desativou')
+				 		_welkom.splice(from, 1)
+				 		fs.writeFileSync('./database/json/welkom.json', JSON.stringify(_welkom))
+				 		reply(`\`\`\`blz\`\`\` *${groupMetadata.subject}*`)
+				 	} else {
+				 		reply('LIGADO para ativar, DESLIGADO para desativar')
+				 	}
+				 	break 
 				case 'antilink':
 				if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -3707,7 +3707,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 							reply(err)
 						})
 					} else {
-						reply('Foto aja mas')
+						reply('Foto')
 					}
 					break 
 					
@@ -3752,7 +3752,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 // 				if (!isUser) return reply(mess.only.userB)
 				
 // 				if (isLimit(sender)) return reply(limitend(pushname2))
-// 					if (args.length < 1) return reply('Mau Nyari Foto Apa???')
+// 					if (args.length < 1) return reply('Que foto tu quer?')
 // 					pinte = body.slice(11)
 // 					anu = await fetchFxc7(`https://api.vhtear.com/pinterest?query=${pinte}&apikey=${VthearApi}`, {method: 'get'})
 // 					reply(mess.wait)
@@ -3898,66 +3898,66 @@ return new Promise(resolve => setTimeout(resolve, ms));
 // 					await limitAdd(sender) 
 //                 break  
                 
-//        case 'ytmp4':
-//     				try {
-//     				if (isBanned) return reply(mess.only.benned)    
-//     				if (!isPrem) return reply(mess.only.premium)
-//     				if (!isUser) return reply(mess.only.userB)
-//     				frhan.updatePresence(from, Presence.recording)
-// 					if (args.length < 1) return reply('Urlnya mana gan?')
-// 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-// 					anu = await fetchFxc7(`https://mhankbarbar.tech/api/ytv?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
-// 					if (anu.error) return reply(anu.error)
-// 					ytt = `╭─「 *YOUTUBE MP4 DOWNLOADER* 」\n│\n│• *Title:* ${anu.title}\n│• *Size:* ${anu.filesize}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama \n│ Karna Mendownload Video\n╰─────────────────────`
-// 					buff = await getBuffer(anu.thumb)
-// 					reply(mess.wait)
-// 					frhan.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
-// 					buffer = await getBuffer(anu.result)
-// 					frhan.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
-// 					} catch {
-// 					reply(mess.error.bug)
-// 					}
-// 					await limitAdd(sender) 
-// 					break 
-// 				case 'playmp3':
-// 				try {
-// 				if (isBanned) return reply(mess.only.benned)    
-// 				if (!isPrem) return reply(mess.only.premium)
-// 				if (!isUser) return reply(mess.only.userB)
-// 				frhan.updatePresence(from, Presence.recording) 
-// 				reply(mess.wait)
-// 				playmp3 = body.slice(9)
-// 				anu = await fetchFxc7(`https://api.vhtear.com/ytmp3?query=${playmp3}&apikey=${VthearApi}`, {method: 'get'})
-// 				infomp3 = `╭─「 *TIMELINE PLAY MP3* 」\n│ *• Judul:* ${anu.result.title}\n│ *• Durasi:* ${anu.result.duration}\n│ *•Size:* ${anu.result.duration}\n│\n│ *TUNGGU SEBENTAR LAGI DIKIRIM*\n│ *MOHON JANGAN SPAM YA BEB*\n╰─────────────────────`
-// 				buffer = await getBuffer(anu.result.image)
-// 				lagu = await getBuffer(anu.result.mp3)
-// 				frhan.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek, ptt: true})
-// 				frhan.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
-// 				} catch {
-// 					reply(mess.error.bug)
-// 					}
-// 					await limitAdd(sender) 
-// 			break 
-// 			case 'ytmp3':
-// 				try {
-// 				if (isBanned) return reply(mess.only.benned)    
-// 				if (!isPrem) return reply(mess.only.premium)
-// 				if (!isUser) return reply(mess.only.userB)
-// 				frhan.updatePresence(from, Presence.recording) 
-// 				reply(mess.wait)
-// 				playmp3 = body.slice(9)
-// 				anu = await fetchFxc7(`https://naufalhoster.xyz/dl/youtube?apikey=Cv5SHS-9ZxAto-HnWqLR&url=${args[0]}`, {method: 'get'})
-// 				mp3 = `${anu.result}`
-// 				infomp3 = `╭─「 *TIMELINE PLAY MP3* 」\n│ *• Judul:* ${mp3.title}\n│ *•Channel:* ${mp3.uploader}\n│ *• Durasi:* ${mp3.duration}\n│ *•Size:* ${mp3.audio.size}\n│ *• Like:* ${mp3.likeCount}\n│ *• Dislike:* ${mp3.dislikeCount}\n│ *• Rating:* ${mp3.rating}\n│ *• Viewers:* ${mp3.viewCount}\n│ *TUNGGU SEBENTAR LAGI DIKIRIM*\n│ *MOHON JANGAN SPAM YA BEB*\n╰─────────────────────`
-// 				buffer = await getBuffer(mp3.thumbnail)
-// 				lagu = await getBuffer(mp3.audio.url)
-// 				frhan.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${mp3.title}.mp3`, quoted: mek, ptt: true})
-// 				frhan.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
-// 				} catch {
-// 					reply(mess.error.bug)
-// 					}
-// 					await limitAdd(sender) 
-// 			break 
+//       case 'ytmp4':
+  //   				try {
+    // 				if (isBanned) return reply(mess.only.benned)    
+     //				if (!isPrem) return reply(mess.only.premium)
+     //				if (!isUser) return reply(mess.only.userB)
+     //				frhan.updatePresence(from, Presence.recording)
+ 	//				if (args.length < 1) return reply('cade o link?')
+ 	//				if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
+ 	//				anu = await fetchFxc7(`https://mhankbarbar.tech/api/ytv?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
+ 	//				if (anu.error) return reply(anu.error)
+ 	//				ytt = `╭─「 *YOUTUBE MP4 DOWNLOAD* 」\n│\n│• *Titulo:* ${anu.title}\n│• *Tamanho:* ${anu.filesize}\n│\n│ Espera um tempo ai \n│ baixando videos\n╰─────────────────────`
+ 	//				buff = await getBuffer(anu.thumb)
+ 	//				reply(mess.wait)
+ 	//				frhan.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
+ 	//				buffer = await getBuffer(anu.result)
+ 	//				frhan.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'tá ai'})
+ 	//				} catch {
+ 	//				reply(mess.error.bug)
+ 	//				}
+ 	//				await limitAdd(sender) 
+ 	//				break 
+ 				case 'playmp3':
+ 				try {
+ 				if (isBanned) return reply(mess.only.benned)    
+ 				if (!isPrem) return reply(mess.only.premium)
+ 				if (!isUser) return reply(mess.only.userB)
+ 				frhan.updatePresence(from, Presence.recording) 
+ 				reply(mess.wait)
+ 				playmp3 = body.slice(9)
+ 				anu = await fetchFxc7(`https://api.vhtear.com/ytmp3?query=${playmp3}&apikey=${VthearApi}`, {method: 'get'})
+ 				infomp3 = `╭─「 *TIMELINE PLAY MP3* 」\n│ *• qualificação:* ${anu.result.title}\n│ *• Duração:* ${anu.result.duration}\n│ *•Tamanho:* ${anu.result.duration}\n│\n│ *ESPERE UM MOMENTO PARA SER ENVIADO*\n│ *NÃO PEÇA DE NOVO*\n╰─────────────────────`
+ 				buffer = await getBuffer(anu.result.image)
+ 				lagu = await getBuffer(anu.result.mp3)
+ 				frhan.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek, ptt: true})
+ 				frhan.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+ 				} catch {
+ 					reply(mess.error.bug)
+ 					}
+ 					await limitAdd(sender) 
+ 			break 
+ 			case 'ytmp3':
+ 				try {
+ 				if (isBanned) return reply(mess.only.benned)    
+ 				if (!isPrem) return reply(mess.only.premium)
+ 				if (!isUser) return reply(mess.only.userB)
+ 				frhan.updatePresence(from, Presence.recording) 
+ 				reply(mess.wait)
+ 				playmp3 = body.slice(9)
+ 				anu = await fetchFxc7(`https://naufalhoster.xyz/dl/youtube?apikey=Cv5SHS-9ZxAto-HnWqLR&url=${args[0]}`, {method: 'get'})
+ 				mp3 = `${anu.result}`
+ 				infomp3 = `╭─「 *TIMELINE PLAY MP3* 」\n│ *• Título:* ${mp3.title}\n│ *•Canal:* ${mp3.uploader}\n│ *• Duração:* ${mp3.duration}\n│ *Tamanho:* ${mp3.audio.size}\n│ *• Like:* ${mp3.likeCount}\n│ *• Dislike:* ${mp3.dislikeCount}\n│ *• Avaliação:* ${mp3.rating}\n│ *• Viewers:* ${mp3.viewCount}\n│ *ESPERE UM MOMENTO PARA SER ENVIADO*\n│ *NÃO PEÇA NOVAMENTE*\n╰─────────────────────`
+ 				buffer = await getBuffer(mp3.thumbnail)
+ 				lagu = await getBuffer(mp3.audio.url)
+ 				frhan.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${mp3.title}.mp3`, quoted: mek, ptt: true})
+ 				frhan.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+ 				} catch {
+ 					reply(mess.error.bug)
+ 					}
+ 					await limitAdd(sender) 
+ 			break 
 // 			case 'smule':
 // 				try {
 // 				frhan.updatePresence(from, Presence.recording) 
